@@ -34,6 +34,14 @@
             $_POST['m5']
         );
 
+        // Display marks using loop (instead of implode)
+        echo "<h3>Results:</h3>";
+        echo "Marks: ";
+        for($i = 0; $i < count($marks); $i++) {
+            echo $marks[$i] . " ";
+        }
+        echo "<br>";
+
         // Calculate maximum marks
         $max = max($marks);
 
@@ -41,8 +49,6 @@
         $total = array_sum($marks);
         $percentage = $total / 5;
 
-        echo "<h3>Results:</h3>";
-        echo "Marks: " . implode(", ", $marks) . "<br>";
         echo "Maximum Marks: " . $max . "<br>";
         echo "Total Marks: " . $total . "<br>";
         echo "Percentage: " . $percentage . "%";
