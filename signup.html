@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Library Signup</title>
+
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            let mobile = document.getElementById("mobile").value;
+            let password = document.getElementById("password").value;
+
+            // Empty field check
+            if (name == "" || email == "" || mobile == "" || password == "") {
+                alert("All fields are required!");
+                return false;
+            }
+
+            // Email validation
+            let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter valid email!");
+                return false;
+            }
+
+            // Mobile number validation (10 digits)
+            let mobilePattern = /^[0-9]{10}$/;
+            if (!mobile.match(mobilePattern)) {
+                alert("Enter valid 10-digit mobile number!");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters!");
+                return false;
+            }
+
+            alert("Signup Successful!");
+            return true;
+        }
+    </script>
+</head>
+
+<body>
+
+<h2>Library Signup Form</h2>
+
+<form onsubmit="return validateForm()">
+    Name: <br>
+    <input type="text" id="name"><br><br>
+
+    Email: <br>
+    <input type="text" id="email"><br><br>
+
+    Mobile No: <br>
+    <input type="text" id="mobile"><br><br>
+
+    Password: <br>
+    <input type="password" id="password"><br><br>
+
+    <input type="submit" value="Register">
+</form>
+
+</body>
+</html>

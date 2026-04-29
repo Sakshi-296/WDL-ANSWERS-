@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Example</title>
+
+    <script>
+        function changeText() {
+            document.getElementById("heading").innerHTML = "Welcome to My College!";
+        }
+
+        function addContent() {
+            let para = document.createElement("p");
+            para.innerHTML = "This content is added dynamically using DOM.";
+            document.getElementById("content").appendChild(para);
+        }
+
+        function showDate() {
+            let date = new Date();
+            document.getElementById("date").innerHTML = date;
+        }
+    </script>
+</head>
+
+<body>
+
+<h2 id="heading">Hello Student</h2>
+
+<button onclick="changeText()">Change Text</button>
+<button onclick="addContent()">Add Content</button>
+<button onclick="showDate()">Show Date & Time</button>
+
+<div id="content"></div>
+
+<p id="date"></p>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Survey Form</title>
+    <style>
+        body {
+            font-family: Arial;
+            background-color: #f2f2f2;
+        }
+        .container {
+            width: 400px;
+            margin: auto;
+            background: slateblue;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        h2 {
+            text-align: center;
+        }
+        input, textarea {
+            width: 100%;
+            margin: 5px 0 10px 0;
+            padding: 8px;
+        }
+        .btn {
+            background-color: blue;
+            color: white;
+            border: none;
+            padding: 10px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Survey Form</h2>
+
+    <form>
+        <!-- Text Field -->
+        Name:
+        <input type="text" placeholder="Enter your name">
+
+        Email:
+        <input type="email" placeholder="Enter your email">
+
+        <!-- Radio Buttons -->
+        Gender:<br>
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <br><br>
+
+        <!-- Checkboxes -->
+        Hobbies:<br>
+        <input type="checkbox"> Reading<br>
+        <input type="checkbox"> Traveling<br>
+        <input type="checkbox"> Gaming<br><br>
+
+        <!-- Text Area -->
+        Feedback:
+        <textarea rows="4" placeholder="Enter your feedback"></textarea>
+
+        <!-- Submit Button -->
+        <input type="submit" value="Submit" class="btn">
+    </form>
+</div>
+
+</body>
+</html> 
