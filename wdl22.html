@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Marks Calculator</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+        }
+
+        .container {
+            width: 350px;
+            margin: auto;
+            margin-top: 80px;
+            padding: 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 0 10px gray;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 8px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #result {
+            margin-top: 15px;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function calculateMarks() {
+            var name = document.getElementById("name").value;
+
+            var m1 = parseFloat(document.getElementById("m1").value);
+            var m2 = parseFloat(document.getElementById("m2").value);
+            var m3 = parseFloat(document.getElementById("m3").value);
+            var m4 = parseFloat(document.getElementById("m4").value);
+            var m5 = parseFloat(document.getElementById("m5").value);
+
+            var total = m1 + m2 + m3 + m4 + m5;
+            var percentage = total / 5;
+
+            var grade;
+
+            if (percentage >= 75)
+                grade = "A";
+            else if (percentage >= 60)
+                grade = "B";
+            else if (percentage >= 50)
+                grade = "C";
+            else
+                grade = "Fail";
+
+            document.getElementById("result").innerHTML =
+                "Name: " + name + "<br>" +
+                "Total: " + total + "<br>" +
+                "Percentage: " + percentage.toFixed(2) + "%<br>" +
+                "Grade: " + grade;
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Student Marks Calculator</h2>
+
+    <input type="text" id="name" placeholder="Enter Name"><br>
+
+    <input type="number" id="m1" placeholder="Subject 1"><br>
+    <input type="number" id="m2" placeholder="Subject 2"><br>
+    <input type="number" id="m3" placeholder="Subject 3"><br>
+    <input type="number" id="m4" placeholder="Subject 4"><br>
+    <input type="number" id="m5" placeholder="Subject 5"><br>
+
+    <button onclick="calculateMarks()">Calculate</button>
+
+    <div id="result"></div>
+</div>
+
+</body>
+</html>

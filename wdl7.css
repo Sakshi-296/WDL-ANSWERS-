@@ -1,0 +1,14 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #c7d2fe, #e0f2fe);
+    margin: 0;
+}
+
+h1 {
+    color: #1e3a8a;
+    margin-top: 20px;
+}
+
+h2 {
+    color: #334155;
+}

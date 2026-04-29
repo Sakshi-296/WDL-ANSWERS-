@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4);
+        }
+
+        .form-box {
+            width: 450px;
+            margin: 40px auto;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, textarea, select {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .options {
+            margin-bottom: 15px;
+        }
+
+        .options input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 10px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>📋 Survey Form</h2>
+
+    <form>
+        <!-- Name -->
+        <label>Full Name:</label>
+        <input type="text" placeholder="Enter your name" required>
+
+        <!-- Email -->
+        <label>Email:</label>
+        <input type="email" placeholder="Enter your email" required>
+
+        <!-- Age -->
+        <label>Age:</label>
+        <input type="number" placeholder="Enter your age">
+
+        <!-- Gender (Radio Buttons) -->
+        <label>Gender:</label>
+        <div class="options">
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender"> Other
+        </div>
+
+        <!-- Interests (Checkboxes) -->
+        <label>Interests:</label>
+        <div class="options">
+            <input type="checkbox"> Technology
+            <input type="checkbox"> Sports
+            <input type="checkbox"> Music
+            <input type="checkbox"> Travel
+        </div>
+
+        <!-- Dropdown -->
+        <label>How did you hear about us?</label>
+        <select>
+            <option>Social Media</option>
+            <option>Friends</option>
+            <option>Website</option>
+            <option>Other</option>
+        </select>
+
+        <!-- Feedback -->
+        <label>Feedback:</label>
+        <textarea rows="4" placeholder="Write your feedback..."></textarea>
+
+        <!-- Submit -->
+        <input type="submit" value="Submit" class="btn">
+    </form>
+</div>
+
+</body>
+</html>

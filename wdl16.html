@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Area Calculator</title>
+</head>
+<body>
+
+<center>
+    <h2>Area Calculator</h2>
+
+    <script>
+        function rectangleArea(l, b) {
+            return l * b;
+        }
+
+        function triangleArea(b, h) {
+            return 0.5 * b * h;
+        }
+
+        function circleArea(r) {
+            return 3.14 * r * r;
+        }
+
+        // Take user choice
+        var choice = parseInt(prompt("Enter your choice:\n1. Rectangle\n2. Triangle\n3. Circle"));
+
+        switch(choice) {
+            case 1:
+                var l = parseFloat(prompt("Enter length:"));
+                var b = parseFloat(prompt("Enter breadth:"));
+                document.write("Area of Rectangle = " + rectangleArea(l, b));
+                break;
+
+            case 2:
+                var b = parseFloat(prompt("Enter base:"));
+                var h = parseFloat(prompt("Enter height:"));
+                document.write("Area of Triangle = " + triangleArea(b, h));
+                break;
+
+            case 3:
+                var r = parseFloat(prompt("Enter radius:"));
+                document.write("Area of Circle = " + circleArea(r));
+                break;
+
+            default:
+                document.write("Invalid Choice");
+        }
+    </script>
+
+</center>
+
+</body>
+</html>

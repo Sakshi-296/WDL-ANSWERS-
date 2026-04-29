@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to right, #74ebd5, #9face6);
+            margin: 0;
+        }
+
+        .container {
+            width: 700px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+        }
+
+        .field {
+            flex: 1;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 5px 0 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+
+        .gender input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .hobbies input {
+            width: auto;
+            margin-right: 5px;
+        }
+
+        .btn {
+            width: 100%;
+            padding: 12px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #45a049;
+        }
+
+        @media(max-width: 750px) {
+            .container {
+                width: 90%;
+            }
+
+            .row {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+    <h2>📝 Student Registration Form</h2>
+
+    <form>
+
+        <!-- Name Row -->
+        <div class="row">
+            <div class="field">
+                <label>First Name:</label>
+                <input type="text" required>
+            </div>
+
+            <div class="field">
+                <label>Last Name:</label>
+                <input type="text" required>
+            </div>
+        </div>
+
+        <!-- Email + Phone -->
+        <div class="row">
+            <div class="field">
+                <label>Email:</label>
+                <input type="email" required>
+            </div>
+
+            <div class="field">
+                <label>Phone:</label>
+                <input type="tel">
+            </div>
+        </div>
+
+        <!-- Gender -->
+        <label>Gender:</label>
+        <div class="gender">
+            <input type="radio" name="gender"> Male
+            <input type="radio" name="gender"> Female
+            <input type="radio" name="gender"> Other
+        </div>
+
+        <!-- DOB + Course -->
+        <div class="row">
+            <div class="field">
+                <label>Date of Birth:</label>
+                <input type="date" required>
+            </div>
+
+            <div class="field">
+                <label>Course:</label>
+                <select>
+                    <option>Computer Engineering</option>
+                    <option>Information Technology</option>
+                    <option>ENTC</option>
+                    <option>AI</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Address -->
+        <label>Address:</label>
+        <textarea rows="3"></textarea>
+
+        <!-- Hobbies -->
+        <label>Hobbies:</label>
+        <div class="hobbies">
+            <input type="checkbox"> Reading
+            <input type="checkbox"> Sports
+            <input type="checkbox"> Music
+            <input type="checkbox"> Traveling
+        </div>
+
+        <!-- Password -->
+        <div class="row">
+            <div class="field">
+                <label>Password:</label>
+                <input type="password">
+            </div>
+
+            <div class="field">
+                <label>Confirm Password:</label>
+                <input type="password">
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <input type="submit" value="Register Now" class="btn">
+
+    </form>
+</div>
+
+</body>
+</html>

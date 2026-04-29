@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+</head>
+
+<body bgcolor="lightblue">
+
+<div align="center">
+
+<h1>Simple Calculator</h1>
+
+<form>
+
+<font size="4">
+
+Number 1: <br>
+<input type="number" id="num1" size="20"><br><br>
+
+Number 2: <br>
+<input type="number" id="num2" size="20"><br><br>
+
+Select Operation:<br>
+<input type="radio" name="op" value="+"> Add
+<input type="radio" name="op" value="-"> Subtract
+<input type="radio" name="op" value="*"> Multiply
+<input type="radio" name="op" value="/"> Divide
+<br><br>
+
+<button type="button" onclick="calculate()">Calculate</button>
+<button type="button" onclick="clearData()">Clear</button>
+
+</font>
+
+</form>
+
+<h2 id="result"></h2>
+
+</div>
+
+<script>
+function calculate() {
+
+    let a = document.getElementById("num1").value;
+    let b = document.getElementById("num2").value;
+
+    if (a=="" || b=="") {
+        document.getElementById("result").innerHTML = "Enter both numbers!";
+        return;
+    }
+
+    a = parseFloat(a);
+    b = parseFloat(b);
+
+    let op = document.querySelector('input[name="op"]:checked');
+
+    if (!op) {
+        document.getElementById("result").innerHTML = "Select operation!";
+        return;
+    }
+
+    let res;
+
+    switch(op.value) {
+        case '+': res = add(a,b); break;
+        case '-': res = sub(a,b); break;
+        case '*': res = mul(a,b); break;
+        case '/': res = div(a,b); break;
+    }
+
+    document.getElementById("result").innerHTML = "Result = " + res;
+}
+
+function add(x,y){ return x+y; }
+function sub(x,y){ return x-y; }
+function mul(x,y){ return x*y; }
+function div(x,y){
+    if(y==0) return "Cannot divide by zero";
+    return x/y;
+}
+
+function clearData() {
+    document.getElementById("num1").value = "";
+    document.getElementById("num2").value = "";
+    document.getElementById("result").innerHTML = "";
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Registration Form</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background-color: lightblue;
+        }
+
+        .form-box {
+            width: 320px;
+            padding: 20px;
+            background: white;
+            margin: auto;
+            margin-top: 80px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        input {
+            width: 90%;
+            padding: 8px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 8px 15px;
+            cursor: pointer;
+        }
+
+        #msg {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var name = document.getElementById("name").value.trim();
+            var email = document.getElementById("email").value.trim();
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var phone = document.getElementById("phone").value.trim();
+
+            // Name validation
+            if (name == "") {
+                alert("Name cannot be empty");
+                return false;
+            }
+
+            // Email validation
+            var emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+            if (!email.match(emailPattern)) {
+                alert("Enter valid email");
+                return false;
+            }
+
+            // Password validation
+            if (password.length < 6) {
+                alert("Password must be at least 6 characters");
+                return false;
+            }
+
+            // Confirm Password validation
+            if (password !== confirmPassword) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // Phone number validation (10 digits)
+            var phonePattern = /^[0-9]{10}$/;
+            if (!phone.match(phonePattern)) {
+                alert("Enter valid 10-digit phone number");
+                return false;
+            }
+
+            // Success message
+            document.getElementById("msg").innerHTML = "Registration Successful!";
+            return false; // prevent actual form submit
+        }
+    </script>
+
+</head>
+
+<body>
+
+<div class="form-box">
+    <h2>Student Registration</h2>
+
+    <form onsubmit="return validateForm()">
+        <input type="text" id="name" placeholder="Enter Name"><br>
+        <input type="text" id="email" placeholder="Enter Email"><br>
+        <input type="password" id="password" placeholder="Enter Password"><br>
+        <input type="password" id="confirmPassword" placeholder="Confirm Password"><br>
+        <input type="text" id="phone" placeholder="Enter Phone Number"><br>
+
+        <button type="submit">Register</button>
+    </form>
+
+    <p id="msg"></p>
+</div>
+
+</body>
+</html>

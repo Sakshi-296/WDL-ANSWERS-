@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Example</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            text-align: center;
+            background: lightgray;
+        }
+
+        .box {
+            background: white;
+            padding: 20px;
+            margin: 50px auto;
+            width: 300px;
+            border-radius: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background: blue;
+            color: white;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="box">
+    <h2 id="title">Welcome Student</h2>
+
+    <p id="content">Click the button to see dynamic content</p>
+
+    <button onclick="changeContent()">Click Me</button>
+</div>
+
+<script>
+function changeContent() {
+    document.getElementById("title").innerHTML = "Hello, I2IT Student!";
+    document.getElementById("content").innerHTML = "Content updated using DOM!";
+}
+</script>
+
+</body>
+</html>

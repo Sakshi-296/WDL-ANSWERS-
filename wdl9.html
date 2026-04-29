@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Library Signup</title>
+
+<style>
+    body {
+        font-family: Arial;
+        background: linear-gradient(to right, blue, purple);
+        margin: 0;
+    }
+
+    .container {
+        width: 500px;
+        margin: 40px auto;
+        background: white;
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    h2 {
+        text-align: center;
+        color: darkblue;
+    }
+
+    input, select, textarea {
+        width: 100%;
+        padding: 8px;
+        margin: 5px 0 15px;
+    }
+
+    .btn {
+        background: blue;
+        color: white;
+        border: none;
+        padding: 10px;
+        width: 100%;
+    }
+
+    .btn:hover {
+        background: darkblue;
+    }
+</style>
+
+<script>
+function validateForm() {
+
+    let name = document.forms["form1"]["name"].value;
+    let email = document.forms["form1"]["email"].value;
+    let mobile = document.forms["form1"]["mobile"].value;
+    let password = document.forms["form1"]["password"].value;
+    let course = document.forms["form1"]["course"].value;
+
+    // Empty check
+    if (name=="" || email=="" || mobile=="" || password=="" || course=="") {
+        alert("All fields are required!");
+        return false;
+    }
+
+    // Email validation
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (!email.match(emailPattern)) {
+        alert("Enter valid email!");
+        return false;
+    }
+
+    // Mobile validation
+    let mobilePattern = /^[0-9]{10}$/;
+    if (!mobile.match(mobilePattern)) {
+        alert("Enter valid 10-digit mobile number!");
+        return false;
+    }
+
+    // Password validation
+    if (password.length < 6) {
+        alert("Password must be at least 6 characters!");
+        return false;
+    }
+
+    alert("Signup Successful!");
+    return true;
+}
+</script>
+
+</head>
+
+<body>
+
+<div class="container">
+<h2>📚 College Library Registration</h2>
+
+<form name="form1" onsubmit="return validateForm()">
+
+<label>Full Name:</label>
+<input type="text" name="name">
+
+<label>Email:</label>
+<input type="text" name="email">
+
+<label>Mobile Number:</label>
+<input type="text" name="mobile">
+
+<label>Course:</label>
+<select name="course">
+<option value="">Select Course</option>
+<option>Computer Engineering</option>
+<option>Information Technology</option>
+<option>ENTC</option>
+<option>AI</option>
+</select>
+
+<label>Gender:</label>
+<input type="radio" name="gender"> Male
+<input type="radio" name="gender"> Female
+<input type="radio" name="gender"> Other
+<br><br>
+
+<label>Address:</label>
+<textarea rows="3"></textarea>
+
+<label>Password:</label>
+<input type="password" name="password">
+
+<input type="submit" value="Register" class="btn">
+
+</form>
+</div>
+
+</body>
+</html>

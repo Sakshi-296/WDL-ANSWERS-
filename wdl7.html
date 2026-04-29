@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Result Dashboard</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Internal CSS -->
+    <style>
+        table {
+            width: 70%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        th {
+            background: #2563eb;
+            color: white;
+            padding: 12px;
+        }
+
+        td {
+            padding: 10px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background: #f1f5f9;
+        }
+    </style>
+</head>
+
+<body>
+
+<h1 align="center">🎓 Student Result Dashboard</h1>
+
+<h2 align="center">Semester Results</h2>
+
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>Marks</th>
+        <th>Grade</th>
+    </tr>
+
+    <tr>
+        <td>Data Structures</td>
+        <td>85</td>
+        <td>A</td>
+    </tr>
+
+    <tr>
+        <td>Database Management</td>
+        <td>90</td>
+        <td>A+</td>
+    </tr>
+
+    <!-- Inline CSS for Top Scorer -->
+    <tr style="background-color: #d1fae5; font-weight: bold;">
+        <td>Operating Systems</td>
+        <td>95</td>
+        <td>O (Top Scorer)</td>
+    </tr>
+
+    <tr>
+        <td>Computer Networks</td>
+        <td>80</td>
+        <td>B+</td>
+    </tr>
+
+    <tr>
+        <td>Web Development</td>
+        <td>88</td>
+        <td>A</td>
+    </tr>
+</table>
+
+</body>
+</html>
