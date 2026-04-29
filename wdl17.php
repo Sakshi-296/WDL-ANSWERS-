@@ -51,7 +51,13 @@
         echo "Name in Uppercase: " . $upper . "<br>";
         echo "Length of Name: " . $length . "<br><br>";
 
-        echo "Marks: " . implode(", ", $marks) . "<br>";
+        // Display marks using loop (instead of implode)
+        echo "Marks: ";
+        for($i = 0; $i < count($marks); $i++) {
+            echo $marks[$i] . " ";
+        }
+        echo "<br>";
+
         echo "Total Marks: " . $total . "<br>";
         echo "Average Marks: " . $average . "<br>";
     }
